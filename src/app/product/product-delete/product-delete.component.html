@@ -1,0 +1,26 @@
+<a routerLink="/products">Danh sách sản phẩm</a>
+<h1>Form info product</h1>
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name" value="{{product.name}}" disabled>
+  </div>
+  <div>
+    <img src="http://localhost:8080/image/{{product.image}}" style="width: 200px;height: 150px" alt="ảnh sản phẩm">
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input type="text" id="price" formControlName="price" value="{{product.price}}" disabled>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" formControlName="description" value="{{product.description}}" disabled>
+  </div>
+  <div>
+    <label for="category">Category:</label>
+    <select>
+      <option id="category" formControlName="category" name="category">{{category.name}}</option>
+    </select>
+  </div>
+  <button>Delete</button>
+</form>

@@ -1,0 +1,16 @@
+<a routerLink="/categories/create">Tạo danh mục</a>
+<h1>Danh sách danh mục</h1>
+<table class="table table-hover">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let category of categories">
+    <td>{{category.id}}</td>
+    <td>{{category.name}}</td>
+    <td><a routerLink="/categories/edit/{{category.id}}">Edit</a></td>
+    <td><a routerLink="/categories/delete/{{category.id}}">Delete</a></td>
+  </tr>
+</table>

@@ -1,0 +1,18 @@
+<h1>Form create category</h1>
+<form #categoryForm="ngForm" (ngSubmit)="createCategory(categoryForm)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"
+           required
+           minlength="6"
+           maxlength="15"
+           #name="ngModel"
+           [(ngModel)]="category.name">
+    <div [hidden]="name.valid || !name.touched">
+      <div style="color: red" *ngIf="name.errors?.required">Name is required</div>
+      <div style="color: red" *ngIf="name.errors?.minlength">Minlength is 6</div>
+      <div style="color: red" *ngIf="name.errors?.maxlength">maxLength is 15</div>
+    </div>
+    <button>Submit</button>
+  </div>
+</form>
